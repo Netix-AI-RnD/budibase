@@ -253,8 +253,8 @@ class TestConfiguration {
   }
 
   async getUser(email: string): Promise<User> {
-    return context.doInTenant(this.getTenantId(), () => {
-      return users.getGlobalUserByEmail(email)
+    return context.doInTenant(this.getTenantId(), async () => {
+      return (await users.getGlobalUserByEmail(email))!
     })
   }
 

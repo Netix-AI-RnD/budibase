@@ -3,7 +3,6 @@ import { mocks } from "@budibase/backend-core/tests"
 import { env, context } from "@budibase/backend-core"
 import * as users from "../users"
 import { CloudAccount } from "@budibase/types"
-import { isPreventPasswordActions } from "../users"
 
 jest.mock("@budibase/pro")
 import * as _pro from "@budibase/pro"

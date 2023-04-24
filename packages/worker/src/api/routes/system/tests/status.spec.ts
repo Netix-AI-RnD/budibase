@@ -32,12 +32,14 @@ describe("/api/system/status", () => {
 
     it("returns status in cloud", async () => {
       const value = {
-        health: {
-          passing: false,
+        passing: false,
+        checks: {
+          login: true,
+          search: true,
         },
       }
 
-      accounts.getStatus.mockReturnValueOnce(Promise.resolve(value))
+      accounts.getStatus.mockResolvedValueOnce(value)
 
       const res = await config.api.status.getStatus()
 
