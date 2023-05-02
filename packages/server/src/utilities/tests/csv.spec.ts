@@ -29,5 +29,18 @@ describe("csv", () => {
         expect(Object.keys(r)).toEqual(["id", "optional", "title"])
       )
     })
+
+    test("array values can be parsed", async () => {
+      const csvString = '"id","role"\n1,[editor,user]\n2,[admin]\n3'
+
+      const result = await jsonFromCsvString(csvString)
+
+      expect(result).toEqual([
+        { id: "1", role: ["editor", "user"] },
+        { id: "2", role: ["admin"] },
+        { id: "3" },
+      ])
+      result.forEach(r => expect(Object.keys(r)).toEqual(["id", "role"]))
+    })
   })
 })
