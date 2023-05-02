@@ -1,20 +1,24 @@
 import { Row, TableSchema } from "@budibase/types"
 
 export function csv(headers: string[], rows: Row[]) {
+  function stringifyValue(val: any) {
+    let result = ""
+
+    if (Array.isArray(val)) {
+      result = `[${val.map(stringifyValue).join(",")}]`
+    } else if (typeof val === "object" && !(val instanceof Date)) {
+      result = `"${JSON.stringify(val).replace(/"/g, "'")}"`
+    } else if (val !== undefined) {
+      result = `"${val}"`
+    }
+    return result.trim()
+  }
+
   let csv = headers.map(key => `"${key}"`).join(",")
 
   for (let row of rows) {
     csv = `${csv}\n${headers
-      .map(header => {
-        let val = row[header]
-        val =
-          typeof val === "object" && !(val instanceof Date)
-            ? `"${JSON.stringify(val).replace(/"/g, "'")}"`
-            : val !== undefined
-            ? `"${val}"`
-            : ""
-        return val.trim()
-      })
+      .map(header => stringifyValue(row[header]))
       .join(",")}`
   }
   return csv
