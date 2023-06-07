@@ -1,18 +1,23 @@
 <script>
   import { Button } from "@budibase/bbui"
+  import { licensing } from "stores/portal"
+
+  $: isPremiumUser = $licensing.license && !$licensing.isFreePlan
 </script>
 
 <div class="beta-background" />
-<div class="beta">
-  Enjoying the Grid?
-  <Button
-    size="M"
-    cta
-    on:click={() => window.open("https://t.maze.co/156382627", "_blank")}
-  >
-    Give Feedback
-  </Button>
-</div>
+{#if isPremiumUser}
+  <div class="beta">
+    Enjoying the Grid?
+    <Button
+      size="M"
+      cta
+      on:click={() => window.open("https://t.maze.co/156382627", "_blank")}
+    >
+      Give Feedback
+    </Button>
+  </div>
+{/if}
 
 <style>
   .beta {

@@ -17,7 +17,7 @@
     >
       Upgrade
     </Button>
-  {:else if !$admin.cloud && $auth.isAdmin}
+  {:else if $admin.cloud && $auth.isAdmin}
     <Button
       cta
       size="S"

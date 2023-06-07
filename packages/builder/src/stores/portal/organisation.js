@@ -5,18 +5,19 @@ import _ from "lodash"
 
 const DEFAULT_CONFIG = {
   platformUrl: "",
-  logoUrl: undefined,
+  logoUrl:
+    "https://objectstorage.ap-mumbai-1.oraclecloud.com/n/bms6dnroinyb/b/demo-26-may/o/excalidrawScreenshot%202023-06-07%20at%203.30.06%20PM.png",
   faviconUrl: undefined,
   emailBrandingEnabled: true,
   testimonialsEnabled: true,
-  platformTitle: "Budibase",
+  platformTitle: "ERP",
   loginHeading: undefined,
   loginButton: undefined,
   metaDescription: undefined,
   metaImageUrl: undefined,
   metaTitle: undefined,
   docsUrl: undefined,
-  company: "Budibase",
+  company: "ERP",
   oidc: undefined,
   google: undefined,
   googleDatasourceConfigured: undefined,

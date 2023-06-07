@@ -11,73 +11,78 @@
   let popoverAnchor
 </script>
 
-<div bind:this={popoverAnchor} class="help">
-  <button class="openMenu" on:click={show}>Help</button>
-  <Popover maxHeight={1000} bind:show bind:hide anchor={popoverAnchor}>
-    <nav class="helpMenu">
-      <div class="header">
-        <Heading size="XS">Help resources</Heading>
-        <button on:click={hide} class="closeButton">
-          <FontAwesomeIcon name="fa-solid fa-xmark" />
-        </button>
-      </div>
-      <div class="divider" />
-      <a target="_blank" href="https://docs.budibase.com/docs">
-        <div class="icon">
-          <FontAwesomeIcon name="fa-solid fa-book" />
+{#if isPremiumUser}
+  <div bind:this={popoverAnchor} class="help">
+    <button class="openMenu" on:click={show}>Help</button>
+    <Popover maxHeight={1000} bind:show bind:hide anchor={popoverAnchor}>
+      <nav class="helpMenu">
+        <div class="header">
+          <Heading size="XS">Help resources</Heading>
+          <button on:click={hide} class="closeButton">
+            <FontAwesomeIcon name="fa-solid fa-xmark" />
+          </button>
         </div>
-        <Body size="S">Help docs</Body>
-      </a>
-      <div class="divider" />
-      <a
-        target="_blank"
-        href="https://github.com/Budibase/budibase/discussions"
-      >
-        <div class="icon">
-          <FontAwesomeIcon name="fa-brands fa-github" />
-        </div>
-        <Body size="S">Discussions</Body>
-      </a>
-      <div class="divider" />
-      <a target="_blank" href="https://discord.com/invite/ZepTmGbtfF">
-        <div class="icon">
-          <FontAwesomeIcon name="fa-brands fa-discord" />
-        </div>
-        <Body size="S">Discord</Body>
-      </a>
-      <div class="divider" />
-      <a target="_blank" href="https://vimeo.com/showcase/budibase-university">
-        <div class="icon">
-          <FontAwesomeIcon name="fa-solid fa-play" />
-        </div>
-        <Body size="S">Budibase University</Body>
-      </a>
-      <div class="divider" />
-      {#if isEnabled(TENANT_FEATURE_FLAGS.LICENSING)}
-        <a
-          href={isPremiumUser
-            ? "mailto:support@budibase.com"
-            : "/builder/portal/account/usage"}
-        >
-          <div class="premiumLinkContent" class:disabled={!isPremiumUser}>
-            <div class="icon">
-              <FontAwesomeIcon name="fa-solid fa-envelope" />
-            </div>
-            <Body size="S">Email support</Body>
+        <div class="divider" />
+        <a target="_blank" href="https://docs.budibase.com/docs">
+          <div class="icon">
+            <FontAwesomeIcon name="fa-solid fa-book" />
           </div>
-          {#if !isPremiumUser}
-            <div class="premiumBadge">
-              <div class="icon">
-                <FontAwesomeIcon name="fa-solid fa-lock" />
-              </div>
-              <Body size="XS">Premium</Body>
-            </div>
-          {/if}
+          <Body size="S">Help docs</Body>
         </a>
-      {/if}
-    </nav>
-  </Popover>
-</div>
+        <div class="divider" />
+        <a
+          target="_blank"
+          href="https://github.com/Budibase/budibase/discussions"
+        >
+          <div class="icon">
+            <FontAwesomeIcon name="fa-brands fa-github" />
+          </div>
+          <Body size="S">Discussions</Body>
+        </a>
+        <div class="divider" />
+        <a target="_blank" href="https://discord.com/invite/ZepTmGbtfF">
+          <div class="icon">
+            <FontAwesomeIcon name="fa-brands fa-discord" />
+          </div>
+          <Body size="S">Discord</Body>
+        </a>
+        <div class="divider" />
+        <a
+          target="_blank"
+          href="https://vimeo.com/showcase/budibase-university"
+        >
+          <div class="icon">
+            <FontAwesomeIcon name="fa-solid fa-play" />
+          </div>
+          <Body size="S">Budibase University</Body>
+        </a>
+        <div class="divider" />
+        {#if isEnabled(TENANT_FEATURE_FLAGS.LICENSING)}
+          <a
+            href={isPremiumUser
+              ? "mailto:support@budibase.com"
+              : "/builder/portal/account/usage"}
+          >
+            <div class="premiumLinkContent" class:disabled={!isPremiumUser}>
+              <div class="icon">
+                <FontAwesomeIcon name="fa-solid fa-envelope" />
+              </div>
+              <Body size="S">Email support</Body>
+            </div>
+            {#if !isPremiumUser}
+              <div class="premiumBadge">
+                <div class="icon">
+                  <FontAwesomeIcon name="fa-solid fa-lock" />
+                </div>
+                <Body size="XS">Premium</Body>
+              </div>
+            {/if}
+          </a>
+        {/if}
+      </nav>
+    </Popover>
+  </div>
+{/if}
 
 <style>
   .help {
