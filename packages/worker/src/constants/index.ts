@@ -1,7 +1,7 @@
 import { constants } from "@budibase/backend-core"
 
 export const LOGO_URL =
-  "https://d33wubrfki0l68.cloudfront.net/aac32159d7207b5085e74a7ef67afbb7027786c5/2b1fd/img/logo/bb-emblem.svg"
+  "https://objectstorage.ap-mumbai-1.oraclecloud.com/n/bms6dnroinyb/b/demo-26-may/o/excalidrawScreenshot%202023-06-07%20at%203.30.06%20PM.png"
 
 export enum UserStatus {
   ACTIVE = "active",

@@ -5,8 +5,7 @@ import _ from "lodash"
 
 const DEFAULT_CONFIG = {
   platformUrl: "",
-  logoUrl:
-    "https://objectstorage.ap-mumbai-1.oraclecloud.com/n/bms6dnroinyb/b/demo-26-may/o/excalidrawScreenshot%202023-06-07%20at%203.30.06%20PM.png",
+  logoUrl: undefined,
   faviconUrl: undefined,
   emailBrandingEnabled: true,
   testimonialsEnabled: true,

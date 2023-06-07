@@ -40,7 +40,11 @@
   {#if favicon !== ""}
     <link rel="icon" type="image/png" href={favicon} />
   {:else}
-    <link rel="icon" type="image/png" href="https://i.imgur.com/Xhdt1YP.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://objectstorage.ap-mumbai-1.oraclecloud.com/n/bms6dnroinyb/b/demo-26-may/o/excalidrawScreenshot%202023-06-07%20at%203.30.06%20PM.png"
+    />
   {/if}
 
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />

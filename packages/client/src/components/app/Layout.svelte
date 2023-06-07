@@ -181,7 +181,8 @@
               <div class="logo">
                 {#if !hideLogo}
                   <img
-                    src={logoUrl || "https://i.imgur.com/Xhdt1YP.png"}
+                    src={logoUrl ||
+                      "https://objectstorage.ap-mumbai-1.oraclecloud.com/n/bms6dnroinyb/b/demo-26-may/o/excalidrawScreenshot%202023-06-07%20at%203.30.06%20PM.png"}
                     alt={title}
                   />
                 {/if}

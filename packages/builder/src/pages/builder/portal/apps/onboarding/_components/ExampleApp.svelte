@@ -45,7 +45,10 @@
 <div tabindex="-1" class="exampleApp">
   <div class="page">
     <div class="header">
-      <img alt="Budibase Logo" src={"https://i.imgur.com/Xhdt1YP.png"} />
+      <img
+        alt="Budibase Logo"
+        src={"https://objectstorage.ap-mumbai-1.oraclecloud.com/n/bms6dnroinyb/b/demo-26-may/o/excalidrawScreenshot%202023-06-07%20at%203.30.06%20PM.png"}
+      />
       <h1>{name}</h1>
     </div>
     <div class="nav">Home</div>
