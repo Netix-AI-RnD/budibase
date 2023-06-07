@@ -206,22 +206,22 @@
       </Body>
     </Layout>
     <Divider />
-    {#if canManagePlan}
+    <!-- {#if canManagePlan}
       <Body>
         To upgrade your plan and usage limits visit your
         <Link size="L" on:click={goToAccountPortal}>account</Link>.
       </Body>
     {:else}
       <Body>Contact your account holder to upgrade your plan.</Body>
-    {/if}
+    {/if} -->
 
-    <DashCard
+    <!-- <DashCard
       description="YOUR CURRENT PLAN"
       title={planTitle()}
       {primaryActionText}
       primaryAction={showButton ? goToAccountPortal : undefined}
       {textRows}
-    >
+    > -->
       <div class="content">
         <div class="column">
           <Layout noPadding>
@@ -248,7 +248,7 @@
           </Layout>
         </div>
       </div>
-    </DashCard>
+    <!-- </DashCard> -->
   </Layout>
 {/if}
 
