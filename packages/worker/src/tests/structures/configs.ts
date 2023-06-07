@@ -76,7 +76,7 @@ export function settings(conf?: any): SettingsConfig {
     config: {
       platformUrl: "http://localhost:10000",
       logoUrl: "",
-      company: "Budibase",
+      company: "ERP",
       ...conf,
     },
   }

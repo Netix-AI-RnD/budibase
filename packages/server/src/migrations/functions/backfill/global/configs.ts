@@ -51,7 +51,7 @@ export const backfill = async (
     }
     if (isSettingsConfig(config)) {
       const company = config.config.company
-      if (company && company !== "Budibase") {
+      if (company && company !== "ERP") {
         await events.org.nameUpdated(timestamp)
       }
 

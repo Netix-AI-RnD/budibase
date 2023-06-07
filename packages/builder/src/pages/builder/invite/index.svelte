@@ -15,7 +15,7 @@
   let errors = {}
   let loaded = false
 
-  $: company = $organisation.company || "Budibase"
+  $: company = $organisation.company || "ERP"
 
   async function acceptInvite() {
     form.validate()

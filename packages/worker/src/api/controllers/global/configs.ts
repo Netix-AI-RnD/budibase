@@ -50,7 +50,7 @@ const getEventFns = async (config: Config, existing?: Config) => {
     } else if (isSettingsConfig(config)) {
       // company
       const company = config.config.company
-      if (company && company !== "Budibase") {
+      if (company && company !== "ERP") {
         fns.push(events.org.nameUpdated)
       }
 
@@ -97,7 +97,7 @@ const getEventFns = async (config: Config, existing?: Config) => {
       // company
       const existingCompany = existing.config.company
       const company = config.config.company
-      if (company && company !== "Budibase" && existingCompany !== company) {
+      if (company && company !== "ERP" && existingCompany !== company) {
         fns.push(events.org.nameUpdated)
       }
 

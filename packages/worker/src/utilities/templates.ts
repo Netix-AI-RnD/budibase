@@ -8,7 +8,7 @@ import {
 import { checkSlashesInUrl } from "./index"
 import { getLicensedConfig } from "./configs"
 
-const BASE_COMPANY = "Budibase"
+const BASE_COMPANY = "ERP"
 import * as pro from "@budibase/pro"
 
 export async function getSettingsTemplateContext(
