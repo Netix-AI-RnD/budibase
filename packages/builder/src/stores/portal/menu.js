@@ -11,12 +11,12 @@ export const menu = derived([admin, auth], ([$admin, $auth]) => {
       href: "/builder/portal/users/users",
     },
   ]
-  if (isEnabled(TENANT_FEATURE_FLAGS.USER_GROUPS)) {
-    userSubPages.push({
-      title: "Groups",
-      href: "/builder/portal/users/groups",
-    })
-  }
+  // if (isEnabled(TENANT_FEATURE_FLAGS.USER_GROUPS)) {
+  //   userSubPages.push({
+  //     title: "Groups",
+  //     href: "/builder/portal/users/groups",
+  //   })
+  // }
 
   // Pages that all devs and admins can access
   let menu = [
@@ -50,14 +50,14 @@ export const menu = derived([admin, auth], ([$admin, $auth]) => {
         title: "Organisation",
         href: "/builder/portal/settings/organisation",
       },
-      {
-        title: "Branding",
-        href: "/builder/portal/settings/branding",
-      },
-      {
-        title: "Environment",
-        href: "/builder/portal/settings/environment",
-      },
+      // {
+      //   title: "Branding",
+      //   href: "/builder/portal/settings/branding",
+      // },
+      // {
+      //   title: "Environment",
+      //   href: "/builder/portal/settings/environment",
+      // },
     ]
     if (!$admin.cloud) {
       settingsSubPages.push({
@@ -80,23 +80,23 @@ export const menu = derived([admin, auth], ([$admin, $auth]) => {
         href: "/builder/portal/account/usage",
       },
     ]
-    if ($auth.isAdmin) {
-      accountSubPages.push({
-        title: "Audit Logs",
-        href: "/builder/portal/account/auditLogs",
-      })
-    }
-    if ($admin.cloud && $auth?.user?.accountPortalAccess) {
-      accountSubPages.push({
-        title: "Upgrade",
-        href: $admin.accountPortalUrl + "/portal/upgrade",
-      })
-    } else if (!$admin.cloud && $auth.isAdmin) {
-      accountSubPages.push({
-        title: "Upgrade",
-        href: "/builder/portal/account/upgrade",
-      })
-    }
+    // if ($auth.isAdmin) {
+    //   accountSubPages.push({
+    //     title: "Audit Logs",
+    //     href: "/builder/portal/account/auditLogs",
+    //   })
+    // }
+    // if ($admin.cloud && $auth?.user?.accountPortalAccess) {
+    //   accountSubPages.push({
+    //     title: "Upgrade",
+    //     href: $admin.accountPortalUrl + "/portal/upgrade",
+    //   })
+    // } else if (!$admin.cloud && $auth.isAdmin) {
+    //   accountSubPages.push({
+    //     title: "Upgrade",
+    //     href: "/builder/portal/account/upgrade",
+    //   })
+    // }
     // add license check here
     if (
       $auth?.user?.accountPortalAccess &&
